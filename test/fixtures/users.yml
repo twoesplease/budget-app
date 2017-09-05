@@ -1,15 +1,3 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  email: MyString
-  name: MyString
-  budget: 1
-  password_digest: MyString
-  string: MyString
-
-two:
-  email: MyString
-  name: MyString
-  budget: 1
-  password_digest: MyString
-  string: MyString
+# Had to remove the contents of this file after adding an index to the users email column, 
+# because the contents of this file were violating my uniqueness constraint
