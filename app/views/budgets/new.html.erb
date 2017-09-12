@@ -1,0 +1,15 @@
+<h1>Create a new budget</h1>
+
+<%#Wrap in divs to add styling%>
+<%= form_for(@budget) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </br>
+  <%= f.label :goal_date %>
+  <%= f.text_field :goal_date %>
+  </br>
+  <%= f.label :goal_total %>
+  <%= f.text_field :goal_total %>
+  </br>
+  <%= f.submit "Create budget" %>
+<% end %>
