@@ -1,11 +1,2 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  user: one
-  goal_total: 9.99
-  goal_date: 2017-09-07
-
-two:
-  user: two
-  goal_total: 9.99
-  goal_date: 2017-09-07
+# Had to empty this file so that I wouldn't violate the uniqueness contraint I
+# added to the Budget name's index
