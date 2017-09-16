@@ -7,8 +7,18 @@ class BudgetTest < ActiveSupport::TestCase
 
   test 'should be valid' do
     assert @budget.valid?
-    debugger
+    # debugger
   end
+
+  # test 'name should be present' do
+    # @budget.name = '   '
+    # assert_not @budget.valid?
+  # end
+#
+  # test 'name should be unique' do
+    # duplicate_budget = @budget.dup
+    # assert_not duplicate_budget.valid?
+  # end
 
   # test 'name should be present' do
     # @budget.name = '   '
@@ -27,6 +37,8 @@ class BudgetTest < ActiveSupport::TestCase
   # end
 
 #test "goal date shouldn't accept past dates" do
+  #@budget.goal_date = 1/1/2001
+  #assert_not @budget.valid?
 #end
 
  #test "goal total should round to 2 digits" do
