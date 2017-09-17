@@ -7,18 +7,7 @@ class BudgetTest < ActiveSupport::TestCase
 
   test 'should be valid' do
     assert @budget.valid?
-    # debugger
   end
-
-  # test 'name should be present' do
-    # @budget.name = '   '
-    # assert_not @budget.valid?
-  # end
-#
-  # test 'name should be unique' do
-    # duplicate_budget = @budget.dup
-    # assert_not duplicate_budget.valid?
-  # end
 
   # test 'name should be present' do
     # @budget.name = '   '
