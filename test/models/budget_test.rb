@@ -5,9 +5,9 @@ class BudgetTest < ActiveSupport::TestCase
     @budget = Budget.new(name: 'Test Budget', goal_total: 100.00, goal_date: 1/1/2018)
   end
 
-  #test "should be valid" do
-    #assert @budget.valid?
-  #end
+  test "should be valid" do
+    assert @budget.valid?
+  end
 
   # test 'name should be present' do
     # @budget.name = '   '
@@ -19,10 +19,10 @@ class BudgetTest < ActiveSupport::TestCase
     # assert_not duplicate_budget.valid?
   # end
 
-  test "goal date shouldn't accept non-dates" do
-    @budget.goal_date = 1/1/1/2001
-    assert_not @budget.valid?
-  end
+  # test "goal date shouldn't accept non-dates" do
+    # @budget.goal_date = 1/1/1/2001
+    # assert_not @budget.valid?
+  # end
 
 #test "goal date shouldn't accept past dates" do
   #@budget.goal_date = 1/1/2001
