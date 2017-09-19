@@ -5,7 +5,7 @@ class BudgetTest < ActiveSupport::TestCase
     @budget = Budget.new(name: 'Test Budget', goal_total: 100.00, goal_date: 1/1/2018)
   end
 
-  test "should be valid" do
+  test 'should be valid' do
     assert @budget.valid?
   end
 
