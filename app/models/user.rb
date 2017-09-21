@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :budgets, foreign_key: 'budget_id', dependent: :destroy
+  has_many :transactions, through: :budgets
   before_save { email.downcase! }
   validates :name, presence: true, length: { maximum: 50 }
   # source: Hartl Rails tutorial + a couple of my own tweaks
