@@ -1,9 +1,16 @@
-<h1>Budget App</h1>
+<%# Using bootstrap 'cover' example: https://getbootstrap.com/docs/3.3/examples/cover/ %>
 
-<h2>
-A place for you to create budgets, set your goal date, and track your progress to completion.
-</h2>
+<%= stylesheet_link_tag 'app/assets/stylesheets/homepage.scss.css' %>
+  <div class='inner cover'>
+    <h1 class='cover-heading'>Budget App</h1>
 
-<%= link_to 'Sign up.', signup_path %> 
-<br>
-<%= link_to 'Sign in.', login_path %> 
+    <h3 class='masthead-brand'>
+      A place for you to create budgets, set your goal date, and track your progress to completion.
+    </h3>
+  </div>
+
+  <p class='lead'>
+    <%= link_to 'Sign up.', signup_path %> 
+    <br>
+    <%= link_to 'Log in.', login_path %> 
+  </p>
