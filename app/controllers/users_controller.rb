@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to @user
     else
+      flash.now[:danger] = 'Please try again.'
       render 'new'
     end
   end
