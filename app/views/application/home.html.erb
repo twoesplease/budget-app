@@ -1,6 +1,15 @@
 <%# Using bootstrap 'cover' example: https://getbootstrap.com/docs/3.3/examples/cover/ %>
 
 <%# <%= stylesheet_link_tag "homepage" %> 
+<div class="card bg-info text-white mb-3 text-right" style="max-width: 100%;">
+  <div class="card-body">
+    <br>
+      <%= link_to "Sign up", signup_path, class: "btn btn-primary" %>
+      <%= link_to "Log in", login_path, class: "btn btn-primary" %>
+      <br><br>
+  </div>
+</div>
+
   <div class='jumbotron'>
     <div class='container'>
       <h1 class='display-3'>Budget App</h1>
@@ -9,12 +18,3 @@
         A place for you to create budgets, set your goal date, and track your progress to completion.
       </h3>
     </div>
-  </div>
-
-  <div class='col-md-4'>
-    <p>
-      <%= link_to 'Sign up.', signup_path %> 
-      <br>
-      <%= link_to 'Log in.', login_path %> 
-    </p>
-  </div>
