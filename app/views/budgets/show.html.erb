@@ -1,4 +1,15 @@
-<h1> Name of budget goes here </h1>
+<h1><%= @budget.name %></h1>
 <p>
-The details of the budget go here.
+Goal amount: <%= @budget.goal_total %>
 </p>
+
+<p>
+Date to save amount by: <%= @budget.goal_date %>
+</p>
+
+<h3><u>Transactions</u></h3>
+<ul class='transactions'>
+<% @transactions.each do |t| %>
+  <li><%= t.note %></li>
+<% end %>
+</ul>

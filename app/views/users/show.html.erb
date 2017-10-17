@@ -5,7 +5,14 @@
    Budget list
  </h2>
  <p>
-   List of budgets goes here :)
+ <% @budgets.each do |b| %>
+   <tr>
+     <td><%= link_to b.name, budget_path(b.id) %></td>
+     <td>Goal total: <%= b.goal_total %></td>
+     <td>Goal date: <%= b.goal_date %></td>
+   </tr>
+   <br>
+ <% end %>
  </p>
  <h2>
    <%= link_to "Create a new budget", controller: "budgets", action: "new" %>

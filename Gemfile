@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'bootstrap-sass', '3.3.7'
+gem 'will_paginate', '>= 3.1.5'
+gem 'bootstrap-will_paginate', '>= 1.0.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
