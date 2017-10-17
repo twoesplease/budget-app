@@ -1,6 +1,8 @@
 class BudgetsController < ApplicationController
+
   def show
-    @user = Budget.find(params[:id])
+    @budget = Budget.find(params[:id])
+    @transactions = Transaction.all
   end
 
   def create
