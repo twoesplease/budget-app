@@ -1,0 +1,17 @@
+<h1>Enter a transaction</h1>
+<div>
+  <p>Amount left to save: $xxxx</p>
+  <%= form_for(@transaction) do |t| %>
+
+    <%= t.label 'Transaction amount' %>
+    <%= t.text_field :transaction_amount, class: 'form-control' %> 
+
+    <%= t.label 'Transaction date' %>
+    <%= t.date_field :transaction_date, class: 'form-control' %>
+
+    <%= t.label 'Add a note' %>
+    <%= t.text_field :note, class: 'form-control' %>
+
+    <%= t.submit 'Save transaction', class: 'btn btn-primary' %>
+  <% end %>
+</div>
