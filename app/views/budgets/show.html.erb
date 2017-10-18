@@ -7,9 +7,16 @@ Goal amount: <%= @budget.goal_total %>
 Date to save amount by: <%= @budget.goal_date %>
 </p>
 
+<p>
+How much left to save: <i>Wow need to add</i>
+</p>
+
 <h3><u>Transactions</u></h3>
+<p><%= link_to 'Add new transaction', new_transaction_path %></p>
 <ul class='transactions'>
 <% @transactions.each do |t| %>
   <li><%= t.note %></li>
 <% end %>
 </ul>
+
+<%= will_paginate @transactions %>
