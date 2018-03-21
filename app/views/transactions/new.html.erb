@@ -4,7 +4,7 @@
   <%= form_for(@transaction) do |t| %>
 
     <%= t.label 'Transaction amount' %>
-    <%= t.text_field :transaction_amount, class: 'form-control' %> 
+    <%= t.number_field :transaction_amount, class: 'form-control' %> 
 
     <%= t.label 'Transaction date' %>
     <%= t.date_field :transaction_date, class: 'form-control' %>
