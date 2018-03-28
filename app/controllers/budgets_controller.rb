@@ -6,7 +6,7 @@ class BudgetsController < ApplicationController
   end
 
   def create
-    @budget = Budget.new(budget_params)
+    @budget = Budget.new(budget_params) 
     @budget.goal_date = Date.parse(@budget[:goal_date])
     if @budget.save
       redirect_to @budget
