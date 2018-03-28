@@ -3,7 +3,6 @@ class TransactionsController < ApplicationController
 
   def create
     # @transaction = Transaction.new(transaction_params)
-    @current_budget = Budget.find(params[:id])
     @transaction = current_budget.transactions.build(transaction_params)
     if @transaction.save
       flash.now[:success] = 'Yeah! Transaction saved.'

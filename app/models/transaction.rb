@@ -9,4 +9,8 @@ class Transaction < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validates :budget_id, presence: true
   attr_accessor :transaction_amount
+
+  def current_budget
+    self.budget_id
+  end
 end
