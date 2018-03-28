@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  # before_action :set_budget_id, only: [:new, :create]
+  before_action :set_budget_id, only: [:new, :create]
 
   def create
     # @transaction = Transaction.new(transaction_params)
@@ -19,9 +19,9 @@ class TransactionsController < ApplicationController
 
   private
 
-  # def set_budget_id
-    # @budget = Budget.find(params[:id])
-  # end
+   def set_budget_id
+     @budget = Budget.find(params[:id])
+   end
 
   def transaction_params
     params.require(:transaction).permit(
