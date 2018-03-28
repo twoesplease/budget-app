@@ -2,7 +2,7 @@ class BudgetsController < ApplicationController
 
   def show
     @budget = Budget.find(params[:id])
-    @transactions = Transaction.paginate(page: params[:page], per_page: 5)
+    @transactions = @budget.transactions.paginate(page: params[:page], per_page: 5)
   end
 
   def create

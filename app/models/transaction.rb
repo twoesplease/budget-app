@@ -6,5 +6,7 @@ class Transaction < ApplicationRecord
       # Transaction.sum(:transaction_amount)
   # end
   belongs_to :budget
+  default_scope -> { order(created_at: :desc) }
+  validates :budget_id, presence: true
   attr_accessor :transaction_amount
 end

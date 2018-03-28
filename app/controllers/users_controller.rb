@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @budgets = Budget.paginate(page: params[:page], per_page: 5)
+    @budgets = @user.budgets.paginate(page: params[:page], per_page: 5)
   end
 
   def create

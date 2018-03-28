@@ -10,4 +10,8 @@ class Budget < ApplicationRecord
                         # date: { after: proc { Date.today }, message:
                                 # 'Must be a valid & future date' }
   # validates :goal_total, presence: true # , format:
+  
+  def transactions
+    Transaction.where("budget_id = ?", id)
+  end
 end

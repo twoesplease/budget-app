@@ -2,7 +2,9 @@ class TransactionsController < ApplicationController
   # before_action :set_budget_id, only: [:new, :create]
 
   def create
-    @transaction = Transaction.new(transaction_params)
+    # @transaction = Transaction.new(transaction_params)
+    @current_budget = Budget.find(params[:id])
+    @transaction = current_budget.transactions.build(transaction_params)
     if @transaction.save
       flash.now[:success] = 'Yeah! Transaction saved.'
      render 'success'
