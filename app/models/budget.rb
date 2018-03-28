@@ -3,7 +3,7 @@ class Budget < ApplicationRecord
                 self.remaining_amount =
                 (self.goal_total - Transaction.sum(:transaction_amount))}
   belongs_to :user
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   # validates :goal_date, presence: true,
