@@ -1,9 +1,8 @@
 class TransactionsController < ApplicationController
-  before_action :set_budget_id, only: [:new, :create]
 
   def create
-    # @transaction = Transaction.new(transaction_params)
-    @transaction = current_budget.transactions.build(transaction_params)
+    @transaction = Transaction.new(transaction_params)
+    @transaction.budget_id = params[:budget_id]
     if @transaction.save
       flash.now[:success] = 'Yeah! Transaction saved.'
      render 'success'
@@ -15,13 +14,10 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
+    @budget = Budget.find(params[:budget_id])
   end
 
   private
-
-   def set_budget_id
-     @budget = Budget.find(params[:id])
-   end
 
   def transaction_params
     params.require(:transaction).permit(

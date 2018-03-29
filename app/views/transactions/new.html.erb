@@ -1,8 +1,14 @@
 <h1>Enter a transaction</h1>
 <div>
   <p>Amount left to save: $xxxx</p>
-  <%= form_for(@transaction) do |t| %>
+  <%= form_for([@budget, @transaction]) do |t| %>
 
+    <% if @transaction.errors.full_messages.any? %>
+  <% @transaction.errors.full_messages.each do |error_message| %>
+    <%= error_message %> <br />
+  <% end %>
+<% end %>
+    
     <%= t.label 'Transaction amount' %>
     <%= t.number_field :transaction_amount, class: 'form-control' %> 
 

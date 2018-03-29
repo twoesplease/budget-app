@@ -12,7 +12,7 @@ How much left to save: [[To be added]]
 </p>
 
 <h3><u>Transactions</u></h3>
-<p><%= link_to 'Add new transaction', new_transaction_path %></p>
+<p><%= link_to 'Add new transaction', new_budget_transaction_path(budget_id: @budget)  %></p>
 <ul class='transactions'>
 <% @transactions.each do |t| %>
   <li><%= t.note %>: <%= t.transaction_amount %> (<%= t.transaction_date %>)</li>
