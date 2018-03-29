@@ -42,6 +42,8 @@ gem 'jbuilder', '~> 2.5'
 # Allow for validating budget goal_date
 gem 'date_validator', '~> 0.9.0'
 
+gem 'byebug'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

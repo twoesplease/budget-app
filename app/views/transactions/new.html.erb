@@ -1,16 +1,25 @@
 <h1>Enter a transaction</h1>
 <div>
   <p>Amount left to save: $xxxx</p>
-  <%= form_for(@transaction) do |t| %>
+  <%= form_for([@budget, @transaction]) do |t| %>
 
+    <% if @transaction.errors.full_messages.any? %>
+  <% @transaction.errors.full_messages.each do |error_message| %>
+    <%= error_message %> <br />
+  <% end %>
+<% end %>
+    
     <%= t.label 'Transaction amount' %>
-    <%= t.text_field :transaction_amount, class: 'form-control' %> 
+    <%= t.number_field :transaction_amount, class: 'form-control' %> 
 
     <%= t.label 'Transaction date' %>
     <%= t.date_field :transaction_date, class: 'form-control' %>
 
     <%= t.label 'Add a note' %>
     <%= t.text_field :note, class: 'form-control' %>
+
+    <%# <%= t.label 'Budget id' %> 
+    <%# <%= t.text_field :budget_id, class: 'form-control' %> 
 
     <%= t.submit 'Save transaction', class: 'btn btn-primary' %>
   <% end %>
