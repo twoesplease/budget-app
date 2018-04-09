@@ -7,22 +7,26 @@ class BudgetsController < ApplicationController
 
   def create
     @budget = Budget.new(budget_params) 
-    @budget.goal_date = Date.parse(@budget[:goal_date])
+    @budget.user_id = params[:user_id]
+    # @budget.goal_date = Date.parse(@budget[:goal_date])
     if @budget.save
+      flash.now[:success] = 'Sweet! Budget saved.'
       redirect_to @budget
     else
+      flash.now[:danger] = "Darn, that didn't work"
       render 'new'
     end
   end
 
   def new
     @budget = Budget.new
+    @user =  User.find(params[:user_id])
   end
 
   private
 
   def budget_params
-    params.require(:budget).permit(:name, :user_id, :goal_total, :goal_date)
+    params.require(:budget).permit(:name, :goal_total, :goal_date)
   end
 
 end

@@ -1,7 +1,5 @@
 class Budget < ApplicationRecord
-  before_save { self.name = name.downcase,  
-                self.remaining_amount =
-                (self.goal_total - Transaction.sum(:transaction_amount))}
+  before_save { self.name = name.downcase }  
   belongs_to :user
   has_many :transactions, dependent: :destroy
 

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root 'application#home'
-  resources :users
+  resources :users do
+    resources :budgets
+  end
   resources :budgets do
     resources :transactions
   end

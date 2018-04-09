@@ -15,6 +15,7 @@
  <% end %>
  </p>
  <h2>
-   <%= link_to "Create a new budget", controller: "budgets", action: "new" %>
+   <%= link_to 'Create a new budget', new_user_budget_path(user_id: @user)  %>
  </h2>
+ </p>
 
