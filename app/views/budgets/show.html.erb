@@ -8,7 +8,7 @@ Date to save amount by: <%= @budget.goal_date %>
 </p>
 
 <p>
-How much left to save: [[To be added]] 
+How much left to save: <%= @budget.goal_total - @budget.transactions.sum(:transaction_amount) %> 
 </p>
 
 <h3><u>Transactions</u></h3>
@@ -20,3 +20,7 @@ How much left to save: [[To be added]]
 </ul>
 
 <%= will_paginate @transactions %>
+
+<p>
+<%= link_to 'Back to profile', current_user%>
+</p>
