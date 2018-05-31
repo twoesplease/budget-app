@@ -15,7 +15,7 @@
  <% end %>
  </p>
  <h2>
-   <%= link_to 'Create a new budget', new_user_budget_path(user_id: @user)  %>
+   <%= link_to 'Create a new budget', new_user_budget_path(user_id: @user.id, user_slug: @user.slug)  %>
  </h2>
  </p>
 
