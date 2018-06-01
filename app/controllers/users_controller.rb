@@ -3,8 +3,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy]
 
   def show
-    @user = User.find(params[:slug])
-    @budgets = @user.budgets.paginate(page: params[:page], per_page: 5)
+    if params[:slug].to_s.length <= 5
+      redirect_to root_path 
+      flash[:danger] = "Sorry, that wasn't an accessible page."
+    else
+      @user = User.find(params[:slug])
+      @budgets = @user.budgets.paginate(page: params[:page], per_page: 5)
+   end
   end
 
   def create
