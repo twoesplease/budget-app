@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def budgets
-    Budget.where("user_id = ?", id)
+    Budget.where("user_slug = ?", slug)
   end
 
   def to_param

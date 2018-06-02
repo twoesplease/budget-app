@@ -10,7 +10,7 @@ module SessionsHelper
   end
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_slug])
+    @current_user ||= User.find_by(slug: session[:user_slug])
   end
 
   def logged_in?

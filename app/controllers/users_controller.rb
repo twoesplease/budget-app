@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
-  before_action :current_user, only: [:show, :create, :edit, :update]
-  before_action :set_user, only: [:show, :edit, :destroy]
+  # before_action :current_user, only: [:show, :create, :edit, :update]
+  # before_action :set_user, only: [:show, :edit, :destroy]
+  # before_action :authenticate_user!, except: [:new, :create]
 
   def show
     if params[:slug].to_s.length <= 5
-      redirect_to root_path 
+      redirect_to root_path
       flash[:danger] = "Sorry, that wasn't an accessible page."
     else
-      @user = User.find(params[:slug])
+      # @user = User.find(params[:slug])
+      @user = User.find_by_slug(params[:slug])
       @budgets = @user.budgets.paginate(page: params[:page], per_page: 5)
    end
   end
@@ -49,7 +51,7 @@ class UsersController < ApplicationController
     end
 
     def set_user
-      @user = User.find_by slug: params[:slug]
+      @user = User.find_by_slug(params[:slug])
     end
 
 end

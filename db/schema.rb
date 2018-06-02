@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180601010310) do
+ActiveRecord::Schema.define(version: 20180602214849) do
 
   create_table "budgets", force: :cascade do |t|
     t.string "name"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20180601010310) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "remaining_amount"
+    t.string "user_slug"
     t.index ["name"], name: "index_budgets_on_name", unique: true
     t.index ["user_id"], name: "index_budgets_on_user_id"
+    t.index ["user_slug"], name: "index_budgets_on_user_slug"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -51,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180601010310) do
     t.datetime "confirmation_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
 end

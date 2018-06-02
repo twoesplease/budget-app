@@ -7,7 +7,7 @@ class BudgetsController < ApplicationController
 
   def create
     @budget = Budget.new(budget_params) 
-    @budget.user_id = params[:user_id]
+    @budget.user_slug = params[:user_slug]
     # @budget.goal_date = Date.parse(@budget[:goal_date])
     if @budget.save
       flash.now[:success] = 'Sweet! Budget saved.'
@@ -20,7 +20,7 @@ class BudgetsController < ApplicationController
 
   def new
     @budget = Budget.new
-    @user =  User.find(params[:user_id])
+    @user =  User.find(params[:user_slug])
   end
 
   private

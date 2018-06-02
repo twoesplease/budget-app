@@ -1,6 +1,6 @@
 class Budget < ApplicationRecord
   before_save { self.name = name.downcase }  
-  belongs_to :user
+  belongs_to :user, foreign_key: 'user_slug'
   has_many :transactions, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true

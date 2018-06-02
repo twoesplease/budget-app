@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.3'
 # Use BCrypt to create secure password hashes
  gem 'bcrypt', '>= 3.1.11'
  gem 'devise', '>= 4.4.3' 
+ gem 'lograge'
 # Use sqlite3 as the database for Active Record
  gem 'sqlite3'
 # Use Puma as the app server
